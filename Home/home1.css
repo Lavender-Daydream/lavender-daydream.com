@@ -1,0 +1,71 @@
+  
+.container {
+    gap: 15px;
+}
+
+
+
+#nav {
+    width: 180px;
+    flex-shrink: 0;
+}
+
+#Welcome {
+    flex: 1;
+    min-width: 200px;
+}
+
+.main-row {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+/*status cafe*/
+
+#statuscafe {
+    border-radius: 10px;
+    width: 50%;
+  }
+  
+  #statuscafe a {
+    color: var(--yellow);
+    text-decoration: none;
+  }
+  
+  #statuscafe-username {
+    font-size: 15px;
+    background: #957fef;
+    font-family: morningtea, var(--fonts);
+    border-bottom: 0px;
+  }
+  
+  #statuscafe-content {
+    font-size: 19px;
+    background: #EFD9CE;
+    color: #957fef;
+  }
+  
+
+  /*imood*/
+
+.imood {
+    background: white;
+    border-radius: 4px;
+  }
+
+#footer {
+  line-height: 0.7;
+}
+
+#fedi-status {
+  font-size: 1em;
+  background: #EFD9CE;
+}
+
+#fedi-meta {
+  font-size: 0.85em;
+  color: var(--haze);
+  background-color: var(--deep);
+  opacity: 0.75;
+}
