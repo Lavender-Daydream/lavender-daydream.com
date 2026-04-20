@@ -69,3 +69,6 @@
   background-color: var(--deep);
   opacity: 0.75;
 }
+
+#fedi-meta a       { color: var(--amber); }
+#fedi-meta a:hover { color: var(--burnt); }
