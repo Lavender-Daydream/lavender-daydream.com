@@ -66,7 +66,7 @@
 
 #fedi-status {
   font-size: 1em;
-  background: #EFD9CE;
+  background: var(--linen)
 }
 
 
@@ -83,20 +83,27 @@
   box-sizing: border-box;
 }
 
+
 #fedi-images {
   width: 100%;
   box-sizing: border-box;
+  background: var(--linen);
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.5em;
+  padding: 0.5em;
+  overflow: hidden;
 }
 
 #fedi-images img {
-  max-width: 100%;
-  max-height: 300px;
-  object-fit: contain;
+  flex: 1;
+  min-width: 0;
+  max-height: 200px;
+  object-fit: cover;
   border-radius: 8px;
-  margin-top: 0.5em;
-  display: block;
   box-sizing: border-box;
 }
+
 
 #fedi-meta a       { color: var(--amber); }
 #fedi-meta a:hover { color: var(--burnt); }
