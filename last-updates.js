@@ -3,7 +3,7 @@ const el = document.getElementById("last-updated");
 fetch("https://api.github.com/repos/Lavender-daydream/Website-lavender-daydream.com/commits?per_page=1")
   .then(response => response.json())
   .then(data => {
-    const rawDate = data[0].commit.committer.date;
+    const rawDate = data[0].commit.committer.date.split("T")[0] + "T12:00:00";
     const formatted = new Date(rawDate).toLocaleDateString("en-US", {
       year: "numeric",
       month: "long",
