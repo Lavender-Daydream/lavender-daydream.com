@@ -24,7 +24,7 @@ There is a separate, private, self hosted Gitea mirror that contains all the fil
 | `Resources` | |
 | `Resources` | |
 
-## ⬆️ Upload to Github Instructions (For Lavender)
+## ⬆️ Upload/Push to Github Instructions (For Lavender)
 
 1. Open the lavender-daydream.com folder in "C:\Users\ (YOUR NAME) \ .src" with VS Code
 2. Press Ctrl+Shift+` to open a terminal window in VS Code
@@ -32,4 +32,6 @@ There is a separate, private, self hosted Gitea mirror that contains all the fil
 ```bash 
 git subtree push --prefix public github main
 ```
-
+4. Wait for it to finish uploading
+5. Copy/Paste ssh github key from Bitwarden
+6. All done! Check Github!
