@@ -1,6 +1,6 @@
 const el = document.getElementById("last-updated");
 
-fetch("https://api.github.com/repos/Lavender-Daydream/Website-lavender-daydream.com/commits?per_page=1")
+fetch("https://git.lavender-daydream.com/api/v1/repos/berlyn/lavender-daydream.com/commits?limit=1")
   .then(response => response.json())
   .then(data => {
     const rawDate = data[0].commit.committer.date;
