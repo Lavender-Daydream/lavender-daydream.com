@@ -21,6 +21,12 @@
     width: 100%;
 }
 
+#status {
+  height: auto;
+  min-height: 0;
+  overflow: hidden;
+}
+
 /*status cafe*/
 
 #statuscafe {
@@ -63,11 +69,33 @@
   background: #EFD9CE;
 }
 
+
 #fedi-meta {
   font-size: 0.85em;
   color: var(--haze);
   background-color: var(--deep);
   opacity: 0.75;
+}
+
+#fedibox {
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#fedi-images {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#fedi-images img {
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-top: 0.5em;
+  display: block;
+  box-sizing: border-box;
 }
 
 #fedi-meta a       { color: var(--amber); }
