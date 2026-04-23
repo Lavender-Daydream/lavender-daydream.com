@@ -13,16 +13,21 @@ There is a separate, private, self hosted Gitea mirror that contains all the fil
 
 | Folder | Description |
 |--------|-------------|
-| `About/` | The page files about me! |
-| `Albums/` | Contains page files for pages that mainly showcase images |
-| `Characters/` |  |
-| `Hoard/` | Folder containing files of collectable images, like 88x31 buttons, blinkies, and stamps! |
-| `Home` | The Home Page! |
-| `Images` | |
-| `Links to Reference` | Contains links for me and possibly others to reference, open with File Explorer |
-| `Public Archived Files` | |
-| `Resources` | |
-| `Resources` | |
+| 📁`About` | The page files about me! |
+| 📁`Albums` | Contains page files for pages that mainly showcase images |
+| 📁`Characters` |  |
+| 📁`Hoard` | Folder containing files of collectable images, like 88x31 buttons, blinkies, and stamps! |
+| 📁`Home` | The Home Page! |
+| 📁`Images` | Images that aren't in the other folders |
+| 📁`Links to Reference` | Contains links for me and possibly others to reference, open with File Explorer |
+| 📁`Public Archived Files` | Archived/Retired files for everyone to view |
+| 📁`Resources` | The page files for the resources page |
+| 📄`Shrines` | Pages dedicated to a specific thing! |
+| 📄`contact.html`||
+| 📄`global.css`| CSS or Styling file that all pages can reference|
+| 📄`sitemap.html` | |
+
+
 
 ## ⬆️ Upload/Push to Github Instructions (For Lavender)
 
