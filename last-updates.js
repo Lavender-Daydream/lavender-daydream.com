@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const el = document.getElementById("last-updated");
 
-  fetch("https://api.github.com/repos/Lavender-daydream/Website-lavender-daydream.com/commits?per_page=1")
+  fetch("https://api.github.com/repos/Lavender-daydream/lavender-daydream.com/commits?per_page=1")
     .then(response => response.json())
     .then(data => {
       const rawDate = data[0].commit.committer.date.split("T")[0] + "T12:00:00";
