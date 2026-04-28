@@ -67,3 +67,9 @@ a:active  { color: var(--deep); }
     padding: 10px;
     font-family: var(--font-body);
 }
+
+.center-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
