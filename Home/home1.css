@@ -1,0 +1,84 @@
+  
+.container {
+    gap: 15px;
+}
+
+
+
+#nav {
+    width: 180px;
+    flex-shrink: 0;
+}
+
+#Welcome {
+    flex: 1;
+    min-width: 200px;
+}
+
+.main-row {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+#status {
+  height: auto;
+  min-height: 0;
+  overflow: hidden;
+}
+  
+
+  /*imood*/
+
+.imood {
+    background: white;
+    border-radius: 4px;
+  }
+
+#footer {
+  line-height: 0.7;
+}
+
+#fedi-status {
+  font-size: 1em;
+  background: var(--linen)
+}
+
+
+#fedi-meta {
+  font-size: 0.85em;
+  color: var(--haze);
+  background-color: var(--deep);
+  opacity: 0.75;
+}
+
+#fedibox {
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+#fedi-images {
+  width: 100%;
+  box-sizing: border-box;
+  background: var(--linen);
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.5em;
+  padding: 0.5em;
+  overflow: hidden;
+}
+
+#fedi-images img {
+  flex: 1;
+  min-width: 0;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+
+#fedi-meta a       { color: var(--amber); }
+#fedi-meta a:hover { color: var(--burnt); }
