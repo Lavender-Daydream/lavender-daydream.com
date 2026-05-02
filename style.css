@@ -1,0 +1,95 @@
+
+/*Global Color Pallete*/
+:root {
+    /* Primary Lavender*/
+    --mist: #F3EBF9;
+    --haze: #E4D4F0;
+    --cloud: #D5BDE7;
+    --bloom: #C9A8E0;
+    --petal: #A87ACC; 
+    --iris: #7B4FA6;
+    --dusk: #5B3A7A;
+    --deep: #3D2060;
+    --abyss: #2A1548;
+
+    /* Amber Accent*/
+    --glow:#FFF3E0;
+    --light:#FFE0B2;
+    --honey:#FFCC80;
+    --amber:#F5A623;
+    --burnt:#D4820A;
+    --umber:#8B5A00;
+
+    /* Rose Accent*/
+    --blush:#F9E4E8;
+    --soft:#F0C4CC;
+    --rose:#E8A4B4;
+    --berry:#C46B80;
+    --plum:#8B3A4A;
+
+}
+
+/*Link Colors*/
+a:link {
+    color: var(--burnt);
+}
+
+a:visited {
+    color: var(--umber);
+}
+
+a:hover {
+    color: var(--umber);
+}
+
+a:active {
+    color: var(--burnt);
+}
+
+/*Body*/
+body{
+    background-color: var(--haze);
+    color: var(--deep);
+}
+
+/*Box*/
+.box {
+    background-color: var(--bloom);
+    border-style: dashed #957FEF;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: 'Shantell Sans';
+  }
+
+#header1{
+    font-family: 'Sofia';
+}
+
+#SubHeader{
+    font-family: 'Shantell Sans';
+}
+
+#WarningSection {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    #WarningSection {
+        flex-direction: column;
+    }
+}
+/*enter link*/
+#enter {
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom:15px;
+    background-color: var(--bloom);
+    border-color: #957FEF;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    font-family: 'Sofia', cursive, sans-serif;
+}
