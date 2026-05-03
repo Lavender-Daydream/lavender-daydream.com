@@ -24,11 +24,14 @@ async function fetchGTS(inst, user) {
   if (!item) throw new Error("no posts in RSS feed");
 
   // Pull the data we need out of the RSS item
-  const raw = item.querySelector("description")?.textContent || "";
-  const content = raw.replace(/^@\S+\s+posted\s+\d+\s+attachments?:\s*/i, "").replace(/^"|"$/g, "").trim();
+  const encoded = item.querySelector("encoded")?.textContent || "";
+  const raw = encoded || item.querySelector("description")?.textContent || "";
+  const content = raw
+  .replace(/^@\S+\s+made\s+a\s+new\s+post:\s*/i, "")  // strips "@user made a new post: "
+  .replace(/^"|"$/g, "")                                 // strips leading/trailing quotes
+  .trim();
   const dateStr  = item.querySelector("pubDate")?.textContent || "";
   const link     = item.querySelector("link")?.textContent || "";
-
 // Grab any image enclosures from the RSS item
   const enclosures = [...item.querySelectorAll("enclosure")]
     .filter(e => e.getAttribute("type")?.startsWith("image/"))
