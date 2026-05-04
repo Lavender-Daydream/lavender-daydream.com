@@ -4,9 +4,10 @@
         <meta charset="utf-8">
         <title>Splash Page</title> <!-- This is the text teh tab will have-->
         <link href="images/Favicons/lav-house.gif" rel="icon" type="image/gif"> <!--This is the tab's icon!-->
-        <link rel="stylesheet" type="text/css" href="global.css"> <!-- Global CSS Link -->
-        <link rel="stylesheet" type="text/css" href="style.css"> <!--CSS Link-->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Shantell+Sans|Sofia"> <!-- Fonts -->
+         <link rel="stylesheet" type="text/css" href="global.css"> <!-- Global CSS Link -->
+         <link rel="stylesheet" type="text/css" href="style.css"> <!--CSS Link-->
+         <link rel="stylesheet" href="fonts/fonts.css"> <!-- Fonts -->
+        <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>  <!-- Lucide Icons -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
@@ -39,6 +40,26 @@
                 <p>Enter this site at your own discretion.</p>
             </div>
         </div>
+
+                        <div id="webrings" class="box">
+                <h2><i data-lucide="link"></i> Webrings</h2>
+                <p>
+                    I'm currently not in any webrings, but I'm working on joining some! I might even make my own!
+                    If you have a webring and want me to join, or want to collaborate on a webring, please contact me!
+                </p>
+
+                <div id='MHfanring'>
+                    <script type="text/javascript" src="https://tesseractcube.neocities.org/rehaul/webring/onionring-variables.js"></script>
+                    <script type="text/javascript" src="https://tesseractcube.neocities.org/rehaul/webring/onionring-widget.js"></script>
+                </div>
+
+                <div id='pvz-ring'>
+                    <script type="text/javascript" src="https://plantsvszombiez.neocities.org/onionring-variables.js"></script>
+                    <script type="text/javascript" src="https://plantsvszombiez.neocities.org/onionring-widget.js"></script>
+                    <link rel="stylesheet" href="https://plantsvszombiez.neocities.org/onionring.css">
+                </div>
+
+            </div>
         <h1 id="enter"><a href="home/index.html">Enter</a></h1>
     </div>
 
@@ -66,8 +87,14 @@
         
     </div>
         <script src="last-updates.js"></script>
-        <script>
+         <script>
             console.log("Why hello there, hacker >;P");
+        </script>
+        <script>
+            // Initialize Lucide icons
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
         </script>
     </body>
 </html>

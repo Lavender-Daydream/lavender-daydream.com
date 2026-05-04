@@ -83,3 +83,23 @@ a:active  { color: var(--deep); }
     margin-left: auto;
     margin-right: auto;
 }
+
+/* Lucide Icons - ensure visibility */
+[data-lucide] {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    min-width: 16px;
+    min-height: 16px;
+    color: currentColor;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+svg[data-lucide] {
+    display: inline-block !important;
+    vertical-align: middle;
+}
