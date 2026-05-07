@@ -108,3 +108,10 @@ body{
     text-align: center;
     justify-content: center;
 }
+
+.bisexual-webring {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
