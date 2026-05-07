@@ -48,6 +48,8 @@ h1 {
 
 #Censor_Panda {
    float: right;
+   display: flex;
+   align-items: center;
    margin-top: -10px;
    margin-right: -15px;
 }
