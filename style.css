@@ -80,6 +80,14 @@ body{
         flex-direction: column;
     }
 }
+
+#enter-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+}
+
 /*enter link*/
 #enter {
     width: fit-content;
@@ -92,4 +100,13 @@ body{
     text-align: center;
     justify-content: center;
     font-family: 'Sofia', cursive, sans-serif;
+}
+
+/*enter link*/
+#webrings {
+    margin-bottom:15px;
+    background-color: var(--bloom);
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
 }
