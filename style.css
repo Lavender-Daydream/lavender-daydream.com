@@ -85,14 +85,12 @@ body{
     display: flex;
     align-items: center;
     gap: 20px;
-    flex-direction: column;
 }
 
 /*enter link*/
 #enter {
     width: fit-content;
     margin: 0 auto;
-    margin-bottom:15px;
     background-color: var(--bloom);
     border-color: #957FEF;
     border-radius: 10px;
