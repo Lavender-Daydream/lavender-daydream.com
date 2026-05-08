@@ -70,16 +70,18 @@
   scroll-snap-type: x mandatory;
 }
 
+#fedi-images a {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
 #fedi-images img,
 #fedi-images video {
-  flex: 0 0 auto;
-  width: auto;
+  display: block;
   width: 280px;
   height: 200px;
   object-fit: cover;
   border-radius: 8px;
-  box-sizing: border-box;
-  scroll-snap-align: start;
 }
 
 
