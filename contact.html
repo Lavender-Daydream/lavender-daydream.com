@@ -3,8 +3,10 @@
     <head>
         <meta charset="utf-8">
         <title>Contact</title>
+        <link href="images/favicons/purple-mail.gif" rel="icon" type="image/gif"> <!--This is the tab's icon!-->
         <link rel="stylesheet" type="text/css" href="global.css">     
         <link rel="stylesheet" href="fonts/fonts.css"> <!-- Fonts -->
+        <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>  <!-- Lucide Icons -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
@@ -33,22 +35,56 @@
         </p>
         <h2>Here are some ways you can contact me:</h2>
         <div class="menu">
+            <h3>Preferred Contact Methods (In Order):</h3>
             <ul>
-                <li>Discord: lavender.daydream</li>
-                <li>Signal: Upon request from other contacts <b>Currently not receving notifications until app is opened</b></li>
-                <li>SimpleX: Upon Request from other contacts</li>
-                <li><a href="mailto:mew.selfhosted.spotlight832@aleeas.com">Reliable Proton-Alias Email (mew.selfhosted.spotlight832@aleeas.com)</a></li>
                 <li><a href="mailto:lavender-daydream@lavender-daydream.com">Self Hosted Email (lavender-daydream@lavender-daydream.com)</a></li>
+                <li>SimpleX: Upon Request from other contacts</li>
+                <li><a href="https://bsky.app/profile/lavender-daydream.bsky.social">Blueksky</a></li>
+                <li>Discord: lavender.daydream</li>
+            </ul>
+            <h3>Other Contact Methods:</h3>
+            <ul>
+                <li>Signal: Upon request from other contacts <b>Currently not receving notifications on mobile unless app is opened</b></li>
+                <li><a href="mailto:mew.selfhosted.spotlight832@aleeas.com">Proton-Alias Email, use if email above doesn't work. (mew.selfhosted.spotlight832@aleeas.com)</a></li>
                 <li><a href="https://plasmatrap.com/@Lavender_Daydream">Plasmatrap.com (Sharkey/Fediverse)</a></li>
                 <li><a href="https://gamerstavern.online/@Lavender_Daydream">Gamer's Tavern Mastodon (Fediverse)</a></li>
                 <li><a href="https://www.instagram.com/lavender.daydream/">Instagram</a></li>
-                <li><a href="https://bsky.app/profile/lavender-daydream.bsky.social">Blueksky</a></li>
                 <li><a href="https://lavendr-daydream.tumblr.com/">Tumblr</a></li>
                 <li><a href="https://neocities.org/site/lavender-daydream">Neocities</a></li>
             </ul>
         </div>
-        <div class="footer">
-            <p>&copy; 2026. Last Edited 4/9/2026. Last Deployed 4/9/2026</p>
-        </div>
+            <footer id="footer" class="box">
+                <p>
+                    This site has been troubleshot with Claude.ai / Artificial Intelligence.
+                    AI has not been used to Generate the entire site, only for bug fixes and learning.
+                    AI will never be used to generate Art, Music, or Creative Writing.
+                    <br>
+                    <br>
+                    <a href="https://www.mozilla.org/firefox" target="_blank">
+                        <img src="hoard/88x31-buttons/resources-services-and-software/tested on firefox button.gif" alt="Tested on Firefox">
+                    </a>
+                    <a href="https://librewolf.net/" target="_blank">
+                        <img src="hoard/88x31-buttons/resources-services-and-software/librewolf.png" alt="LibreWolf Button">
+                    </a>
+                    <a href="https://www.mabsland.com/Adoption.html" target="_blank">
+                        <img src="hoard/88x31-buttons/censor-panda/Censor_Mc button.gif" alt="Censor Mc Button">
+                    </a>
+                    <a href="https://brainmade.org/" target="_blank">
+                        <img src="hoard/88x31-buttons/brainmade-org/88x31-light.png" alt="Brainmade.org Button">
+                    </a>
+                    <a href="https://web.archive.org/save/https://www.lavender-daydream.com/" target="_blank">
+                        <img src="hoard/88x31-buttons/my-buttons/wayback machine 88x31.png" alt="Archive my site on the Wayback Machine!" width="88" height="31">
+                    </a>
+                    <br>
+                    <p>&copy; 2026. Last updated: <span id="last-updated">Loading...</span></p>
+                </p>
+                 <script src="last-updates.js"></script>
+            </footer>
+        <script>
+            // Initialize Lucide icons
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        </script>
     </body>
 </html>
