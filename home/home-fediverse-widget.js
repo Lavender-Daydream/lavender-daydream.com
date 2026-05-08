@@ -99,20 +99,29 @@ async function loadStatus() {
   meta.appendChild(link);
   meta.append(` · ${date}`);
 
-  // Images (API only — RSS doesn't provide these)
+  // Media (API only — RSS doesn't provide these)
   const imageContainer = document.getElementById('fedi-images');
   imageContainer.innerHTML = '';
-  const images = (newest.post.media_attachments || []).filter(m => m.type === 'image');
-  for (const img of images) {
-    const a = document.createElement('a');
-    a.href = img.url;
-    a.target = '_blank';
-    a.rel = 'noopener noreferrer';
-    const el = document.createElement('img');
-    el.src = img.preview_url;
-    el.alt = img.description || 'attached image';
-    a.appendChild(el);
-    imageContainer.appendChild(a);
+  for (const m of (newest.post.media_attachments || [])) {
+    if (m.type === 'image') {
+      const a = document.createElement('a');
+      a.href = m.url;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      const el = document.createElement('img');
+      el.src = m.preview_url;
+      el.alt = m.description || 'attached image';
+      a.appendChild(el);
+      imageContainer.appendChild(a);
+    } else if (m.type === 'video' || m.type === 'gifv') {
+      const el = document.createElement('video');
+      el.src = m.url;
+      el.controls = true;
+      el.loop = m.type === 'gifv';
+      el.muted = m.type === 'gifv';
+      el.setAttribute('aria-label', m.description || 'attached video');
+      imageContainer.appendChild(el);
+    }
   }
 }
 
