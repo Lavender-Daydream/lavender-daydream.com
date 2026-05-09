@@ -60,20 +60,27 @@ body{
     padding: 10px;
     font-family: 'Shantell Sans';
   }
-
-#header1{
+#header1 {
+    text-align: center;
     font-family: 'Sofia';
+    position: relative;
+    z-index: 0;
 }
 
 #SubHeader{
     font-family: 'Shantell Sans';
 }
 
-#WarningSection {
+#welcome {
     display: flex;
     align-items: center;
     gap: 20px;
 }
+
+#welcome-text {
+    text-align: center;
+}
+
 
 @media (max-width: 768px) {
     #WarningSection {
@@ -89,12 +96,12 @@ body{
     justify-content: center;  /* centers everything horizontally */
 }
 
-#ads, #webrings {
+#disclaimer, #webrings {
     flex: 1;
 }
 
 
-#ads {
+#disclaimer {
     display: flex;
     flex-direction: column;
     text-align: center;
