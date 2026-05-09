@@ -91,6 +91,17 @@ body{
 
 #ads {
     display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex-wrap: nowrap;   /* DON'T wrap to a new line — stay in one row */
+    overflow-y: auto;    /* if children are wider than the container, scroll instead of hiding */
+    max-height: 550px;        /* container stops growing here — scroll kicks in past this */
+    max-width: 650px;
+}
+
+#ads-row {
+    text-align: center;
+    display: flex;
     flex-direction: row;
     align-items: flex-end;
     gap: 5px;
