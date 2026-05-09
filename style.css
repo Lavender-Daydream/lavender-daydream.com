@@ -89,6 +89,11 @@ body{
     justify-content: center;  /* centers everything horizontally */
 }
 
+#ads, #webrings {
+    flex: 1;
+}
+
+
 #ads {
     display: flex;
     flex-direction: column;
