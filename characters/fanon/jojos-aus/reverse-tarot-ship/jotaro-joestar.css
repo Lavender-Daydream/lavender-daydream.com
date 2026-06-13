@@ -1,0 +1,45 @@
+/*Global Color Pallete*/
+:root {
+    /* Primary Black */
+    --fog: #E8E8E8;
+    --haze: #C0C0C0;
+    --mist: #808080;
+    --ash: #505050;
+    --iron: #303030;
+    --coal: #1A1A1A;
+    --deep: #101010;
+    --void: #050505;
+
+    /* Navy Blue Secondary */
+    --sky: #C8D2E8;
+    --slate: #8E9EC4;
+    --ocean: #4A5C8A;
+    --navy: #1E3A6E;
+    --midnight: #0F2550;
+    --abyss: #091B3D;
+
+    /* Gold Accent */
+    --cream: #FDF6E3;
+    --parchment: #F5E8C0;
+    --glow: #F0D060;
+    --gold: #D4A017;
+    --burnished: #A8790A;
+    --bronze: #7A5500;
+    --tarnish: #4D3300;
+
+}
+
+/*Body*/
+body{
+    background-color: var(--deep);
+    color: var(--parchment);
+}
+
+/*Box*/
+.box {
+    margin-bottom:15px;
+    background-color: var(--iron);
+    border-radius: 10px;
+    padding: 10px;
+    font-family: var(--font-body);
+}
