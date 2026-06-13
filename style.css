@@ -168,3 +168,10 @@ body{
     align-items: center;
     gap: 10px;
 }
+
+.3DS-Players {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
