@@ -29,6 +29,19 @@
 
 }
 
+/*Links*/
+a:link {
+    color: var(--gold);
+}
+
+a:visited {
+    color: var(--burnished);
+}
+
+a:hover {
+    color: var(--glow);
+}
+
 /*Body*/
 body{
     background-color: var(--deep);
