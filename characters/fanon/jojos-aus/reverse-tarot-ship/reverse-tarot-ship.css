@@ -1,0 +1,7 @@
+#to-be-continued {
+    /* display: block lets margin-left: auto push the image to the right.
+       flex/justify-content won't work here because those properties align
+       children INSIDE an element — but <img> has no children to align. */
+    display: block;
+    margin-left: auto;
+}
