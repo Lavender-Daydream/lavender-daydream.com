@@ -1,0 +1,34 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.row a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    width: 120px;
+}
+
+.row a img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+    border: 3px solid var(--dusk);
+    border-radius: 4px;
+}
+
+.row a span {
+    background-color: var(--dusk);
+    color: var(--mist);
+    font-size: 0.8rem;
+    padding: 4px 6px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: 6px;
+    border-radius: 4px;
+}
