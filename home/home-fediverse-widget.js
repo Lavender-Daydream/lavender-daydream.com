@@ -7,6 +7,7 @@ const ACCOUNTS = [
   { instance: "donphan.social",               username: "Lavender_Daydream" },
   { instance: "blorbo.social",                username: "Lavender_Daydream" },
   { instance: "urusai.social",                username: "Lavender_Daydream" },
+  { instance: "plasmatrap.com",              username: "Lavender_Daydream" },
 ];
 
 // Fetches GTS post via RSS feed (no auth needed)
