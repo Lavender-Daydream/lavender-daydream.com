@@ -153,7 +153,7 @@ async function loadStatus() {
       a.rel = 'noopener noreferrer';
       const el = document.createElement('img');
       el.src = m.preview_url;
-      el.alt = m.description || 'attached image';
+      el.alt = m.description || 'image without alt text';
       a.appendChild(el);
       imageContainer.appendChild(a);
     } else if (m.type === 'video' || m.type === 'gifv') {
