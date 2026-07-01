@@ -7,7 +7,8 @@ const ACCOUNTS = [
   { instance: "donphan.social",               username: "Lavender_Daydream" },
   { instance: "blorbo.social",                username: "Lavender_Daydream" },
   { instance: "urusai.social",                username: "Lavender_Daydream" },
-  { instance: "plasmatrap.com",              username: "Lavender_Daydream" },
+  { instance: "plasmatrap.com",               username: "Lavender_Daydream" },
+  { type: "bluesky",                          username: "lavender-daydream.bsky.social" },
 ];
 
 // Fetches GTS post via RSS feed (no auth needed)
@@ -63,14 +64,50 @@ async function fetchAPI(inst, user) {
   return { post: posts[0], instance: inst, username: user };
 }
 
-// Decides which fetch method to use based on the instance
-async function fetchLatest(inst, user) {
-  if (inst === "gotosocial.lavender.spl.tech") return fetchGTS(inst, user);
-  return fetchAPI(inst, user);
+// Fetches the latest Bluesky post via the public AT Protocol API (no auth needed)
+async function fetchBluesky(user) {
+  const url = `https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=${encodeURIComponent(user)}&limit=5&filter=posts_no_replies`;
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Bluesky fetch failed: ${res.status}`);
+  const data = await res.json();
+
+  const feedItem = data.feed?.[0];
+  if (!feedItem) throw new Error("no posts");
+
+  const record = feedItem.post.record;
+  const embed  = feedItem.post.embed;
+
+  let media_attachments = [];
+  if (embed?.$type === "app.bsky.embed.images#view") {
+    media_attachments = embed.images.map(img => ({
+      type: "image",
+      url: img.fullsize,
+      preview_url: img.thumb,
+      description: img.alt || "",
+    }));
+  }
+
+  return {
+    type: "bluesky",
+    post: {
+      content: record.text,
+      created_at: record.createdAt,
+      media_attachments,
+      url: `https://bsky.app/profile/${user}/post/${feedItem.post.uri.split('/').pop()}`,
+    },
+    username: user,
+  };
+}
+
+// Decides which fetch method to use based on the account type/instance
+async function fetchLatest(account) {
+  if (account.type === "bluesky") return fetchBluesky(account.username);
+  if (account.instance === "gotosocial.lavender.spl.tech") return fetchGTS(account.instance, account.username);
+  return fetchAPI(account.instance, account.username);
 }
 
 async function loadStatus() {
-  const results = await Promise.allSettled(ACCOUNTS.map(a => fetchLatest(a.instance, a.username)));
+  const results = await Promise.allSettled(ACCOUNTS.map(a => fetchLatest(a)));
 
   let newest = null;
   results.forEach(r => {
@@ -90,10 +127,15 @@ async function loadStatus() {
 
   // Meta line: @user@instance · date
   const date = new Date(newest.post.created_at).toLocaleString();
-  const profileUrl = `https://${newest.instance}/@${newest.username}`;
+  const profileUrl = newest.type === "bluesky"
+    ? `https://bsky.app/profile/${newest.username}`
+    : `https://${newest.instance}/@${newest.username}`;
+  const displayHandle = newest.type === "bluesky"
+    ? `@${newest.username}`
+    : `@${newest.username}@${newest.instance}`;
   const link = document.createElement('a');
   link.href = profileUrl;
-  link.textContent = `@${newest.username}@${newest.instance}`;
+  link.textContent = displayHandle;
   link.target = '_blank';
   const meta = document.getElementById('fedi-meta');
   meta.textContent = '';

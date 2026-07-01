@@ -33,10 +33,32 @@ There is a separate, private, self hosted Gitea mirror that contains all the fil
 
 1. Open the lavender-daydream.com folder in "C:\Users\ (YOUR NAME) \ .src" with VS Code
 2. Press Ctrl+Shift+` to open a terminal window in VS Code
-3. enter in the terminal window:
-```bash 
-git subtree push --prefix public github main
+3. Enter in the terminal window:
+
+```bash
+git subtree split --prefix=public -b github-sync
+git push github github-sync:main --force
+git branch -D github-sync
 ```
+
 4. Wait for it to finish uploading
-5. Copy/Paste ssh github key from Bitwarden
+5. Copy/Paste ssh github key from Bitwarden if prompted
 6. All done! Check Github!
+
+### Why three commands instead of one?
+
+The short version (`git subtree push --prefix public github main`) sometimes hits a bug with the message `fatal: can't copy commit ...`. The three-command version works around that bug every time:
+
+- `git subtree split` — creates a temporary branch containing only the `public/` folder's history
+- `git push ... --force` — pushes that branch to GitHub (force is safe here since GitHub is a one-way mirror)
+- `git branch -D github-sync` — deletes the temporary branch to clean up
+
+### git subtree not installed?
+
+If you get `git: 'subtree' is not a git command`, run this once to install it:
+
+```bash
+curl -fsSL "https://raw.githubusercontent.com/git/git/v2.54.0/contrib/subtree/git-subtree.sh" -o ~/.local/bin/git-subtree && chmod +x ~/.local/bin/git-subtree
+```
+
+Then make sure `~/.local/bin` is in your PATH (`export PATH="$HOME/.local/bin:$PATH"`) before running the push commands.
