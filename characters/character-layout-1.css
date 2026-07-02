@@ -1,3 +1,137 @@
+/* ── Sidebar (on hold — revisit when starting JavaScript) ───
+
+.sidenav {
+    height: 100%;
+    width: 220px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #DEC0F1;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Back link at top */
+.sidenav-back {
+    padding: 4px 16px 12px;
+    border-bottom: 1px solid #957FEF;
+}
+
+.sidenav-back a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #B79CED;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+/* Portrait + name */
+.sidenav-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    gap: 10px;
+}
+
+.sidenav-portrait {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #957FEF;
+}
+
+.sidenav-name {
+    font-size: 1rem;
+    color: #DEC0F1;
+    text-align: center;
+    margin: 0;
+}
+
+/* Shared list styles for sections + stats */
+.sidenav-sections,
+.sidenav-stats,
+.sidenav-external ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidenav-sections a,
+.sidenav-stats a,
+.sidenav-external a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    color: #EFD9CE;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.sidenav-sections a i,
+.sidenav-stats a i,
+.sidenav-external a i {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+}
+
+/* Count badge (e.g. "Gallery  36") */
+.stat-count {
+    margin-left: auto;
+    background-color: #957FEF;
+    color: #2E2C2F;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 1px 6px;
+    border-radius: 999px;
+}
+
+/* Divider before stats */
+.sidenav-stats {
+    border-top: 1px solid #957FEF;
+    padding-top: 8px;
+    margin-top: 4px;
+}
+
+/* "Find them on" section */
+.sidenav-external {
+    border-top: 1px solid #957FEF;
+    padding-top: 8px;
+    margin-top: 4px;
+}
+
+.sidenav-external h2 {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #957FEF;
+    padding: 4px 16px;
+    margin: 0;
+}
+
+─────────────────────────────────────────────── */
+
+/* ── Main content ────────────────────────────── */
+
+body {
+    margin-left: 220px; /* must match .sidenav width */
+}
+
+.header {
+    padding: 20px;
+}
+
+/* ── Content boxes ───────────────────────────── */
+
 #top-info {
     display: flex;
     align-items: stretch;
@@ -6,5 +140,5 @@
 }
 
 #top-info .box {
-    flex-grow: 1; /* flex grow must go on the child elements */
+    flex-grow: 1;
 }
