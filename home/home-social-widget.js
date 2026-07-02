@@ -71,7 +71,8 @@ async function fetchBluesky(user) {
   if (!res.ok) throw new Error(`Bluesky fetch failed: ${res.status}`);
   const data = await res.json();
 
-  const feedItem = data.feed?.[0];
+  // Skip reposts — getAuthorFeed includes them, marked with a "reason" field
+  const feedItem = data.feed?.find(item => !item.reason);
   if (!feedItem) throw new Error("no posts");
 
   const record = feedItem.post.record;
