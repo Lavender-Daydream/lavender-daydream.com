@@ -55,10 +55,16 @@ The short version (`git subtree push --prefix public github main`) sometimes hit
 
 ### git subtree not installed?
 
-If you get `git: 'subtree' is not a git command`, run this once to install it:
+If you get `git: 'subtree' is not a git command`, try this first. It tells the terminal where to find `git-subtree`, and it only lasts until you close the terminal:
+
+```bash
+export PATH="$HOME/.local/bin:$PATH"
+```
+
+Then run the three push commands again. **VS Code's terminal (Flatpak) forgets this every time you open a new one, so you'll probably need this line before every upload.**
+
+Still not working? Then `git-subtree` isn't installed yet. Run this once to install it, then run the `export` line above:
 
 ```bash
 curl -fsSL "https://raw.githubusercontent.com/git/git/v2.54.0/contrib/subtree/git-subtree.sh" -o ~/.local/bin/git-subtree && chmod +x ~/.local/bin/git-subtree
 ```
-
-Then make sure `~/.local/bin` is in your PATH (`export PATH="$HOME/.local/bin:$PATH"`) before running the push commands.
